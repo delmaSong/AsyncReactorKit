@@ -1,0 +1,15 @@
+{
+  "originHash" : "59e8a9ac50e35d7e267388b6c24541158f375a45d75827848c83320b0564a3fd",
+  "pins" : [
+    {
+      "identity" : "weakmaptable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactorKit/WeakMapTable.git",
+      "state" : {
+        "revision" : "cb05d64cef2bbf51e85c53adee937df46540a74e",
+        "version" : "1.2.1"
+      }
+    }
+  ],
+  "version" : 3
+}

@@ -13,9 +13,15 @@ let package = Package(
             name: "AsyncReactorKit",
             targets: ["AsyncReactorKit"]),
     ],
+	dependencies: [
+		   .package(url: "https://github.com/ReactorKit/WeakMapTable.git", from: "1.2.1")
+	   ],
     targets: [
         .target(
-            name: "AsyncReactorKit"
-		)
+            name: "AsyncReactorKit",
+			dependencies: [
+				"WeakMapTable"
+			]
+		),
     ]
 )
