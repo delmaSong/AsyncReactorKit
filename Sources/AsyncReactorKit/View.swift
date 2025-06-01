@@ -15,8 +15,6 @@ private enum MapTables {
 }
 
 protocol View: AnyObject {
-	associatedtype Reactor: AsyncReactor
-	
 	var reactor: Reactor? { get set }
 	
 	func bind(reactor: Reactor) async
@@ -29,7 +27,7 @@ extension View {
 	  MapTables.reactor.setValue(newValue, forKey: self)
 	  
 	  if let reactor = newValue {
-		await bind(reactor: reactor)
+		bind(reactor: reactor)
 	  }
 	}
   }
