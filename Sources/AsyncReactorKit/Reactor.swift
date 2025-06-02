@@ -126,6 +126,3 @@ final class CounterReactor: Reactor {
 	return newState
   }
 }
-
-nonisolated(unsafe) let reactor = CounterReactor()
-reactor.send(.plus)

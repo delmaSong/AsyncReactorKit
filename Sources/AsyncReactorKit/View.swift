@@ -11,18 +11,19 @@ import Foundation
 private typealias AnyView = AnyObject
 
 private enum MapTables {
-  static let reactor = WeakMapTable<AnyView, Any>()
+	static let reactor = WeakMapTable<AnyView, Any>()
 }
 
 protocol View: AnyObject {
-	var reactor: Reactor? { get set }
+	associatedtype R: Reactor
+	var reactor: R? { get set }
 	
-	func bind(reactor: Reactor) async
+	func bind(reactor: R)
 }
 
 extension View {
-  public var reactor: Reactor? {
-	get { MapTables.reactor.value(forKey: self) as? Reactor }
+  public var reactor: R?{
+	get { MapTables.reactor.value(forKey: self) as? R }
 	set {
 	  MapTables.reactor.setValue(newValue, forKey: self)
 	  
